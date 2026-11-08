@@ -1,0 +1,14 @@
+# VOICEVOX engine is NOT stored in this repo.
+# Re-acquire the official distribution (VOICEVOX engine Linux v0.26.1,
+# linux-cpu-x64) from the official site and place it under engine/.
+engine/
+download/
+
+# Python virtual environment - recreate locally.
+.venv/
+
+# Generated audio output.
+out/
+
+*.log
+__pycache__/

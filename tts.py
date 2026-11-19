@@ -55,11 +55,11 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--text-file", required=True, help="台本テキスト（1行=1セリフ、空行は無視）")
     ap.add_argument("--out-dir", required=True)
-    ap.add_argument("--speed", type=float, default=1.2, help="話速（speedScale）。うちの標準は1.2（2026-11-07に本人が判定）")
+    ap.add_argument("--speed", type=float, default=1.2, help="話速（speedScale）。デフォルトは1.2")
     ap.add_argument("--speaker", default="春日部つむぎ")
     ap.add_argument("--style", default="ノーマル")
     ap.add_argument("--engine", default="http://127.0.0.1:50021")
-    ap.add_argument("--pause", type=float, default=0.05, help="行間の無音（秒）。うちの標準は0.05（2026-11-07に本人が判定）")
+    ap.add_argument("--pause", type=float, default=0.05, help="行間の無音（秒）。デフォルトは0.05")
     args = ap.parse_args()
 
     lines = [ln.strip() for ln in Path(args.text_file).read_text(encoding="utf-8").splitlines() if ln.strip()]

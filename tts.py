@@ -54,11 +54,11 @@ def wav_seconds(path: Path) -> float:
 def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--text-file", required=True, help="台本テキスト（1行=1セリフ、空行は無視）")
-    ap.add_argument("--out-dir", required=True)
+    ap.add_argument("--out-dir", required=True, help="出力先ディレクトリ（行ごとのwav、連結した joined.wav、manifest.json を出す）")
     ap.add_argument("--speed", type=float, default=1.2, help="話速（speedScale）。デフォルトは1.2")
-    ap.add_argument("--speaker", default="春日部つむぎ")
-    ap.add_argument("--style", default="ノーマル")
-    ap.add_argument("--engine", default="http://127.0.0.1:50021")
+    ap.add_argument("--speaker", default="春日部つむぎ", help="話者の名前。デフォルトは春日部つむぎ")
+    ap.add_argument("--style", default="ノーマル", help="話者のスタイル名。デフォルトはノーマル")
+    ap.add_argument("--engine", default="http://127.0.0.1:50021", help="VOICEVOXエンジンのURL。デフォルトは http://127.0.0.1:50021")
     ap.add_argument("--pause", type=float, default=0.05, help="行間の無音（秒）。デフォルトは0.05")
     args = ap.parse_args()
 
